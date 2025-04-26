@@ -15,14 +15,39 @@
   z-index: 9000;
 }
 
+/* Mobile adjustments for menu container */
+@media screen and (max-width: 768px) {
+  .menu-container {
+    padding: 10px 5px;
+    height: auto;
+    min-height: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
+
 /* Horizontal menu styles */
 .horizontal-menu {
   display: flex;
   gap: 10px;
 }
 
+/* Mobile adjustments for horizontal menu */
+@media screen and (max-width: 768px) {
+  .horizontal-menu {
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+}
+
 .menu-nav-button {
   background-color: rgba(0, 160, 179, 0.2);
+  flex-wrap: nowrap;
   color: #1dcfe4;
   border: none;
   padding: 8px 16px;
@@ -31,6 +56,16 @@
   font-size: 14px;
   transition: all 0.2s ease;
   border-bottom: 3px solid transparent;
+}
+
+/* Mobile adjustments for nav buttons */
+@media screen and (max-width: 768px) {
+  .menu-nav-button {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 3px;
+    flex-grow: 0;
+  }
 }
 
 .menu-nav-button:hover {
@@ -60,6 +95,19 @@
   display: inline-block;
 }
 
+/* Mobile adjustments for greeting */
+@media screen and (max-width: 768px) {
+  .greeting {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 0;
+    width: auto;
+    text-align: center;
+    white-space: normal;
+    max-width: 90%;
+  }
+}
+
 .greeting:hover {
   background-color: rgba(0, 160, 179, 0.6);
 }
@@ -77,4 +125,16 @@
   flex: 1;
   overflow-y: auto;
   background-color: #08313a;
+}
+
+/* Additional mobile adjustments for the parent container */
+@media screen and (max-width: 768px) {
+  .app-layout {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .content-wrapper {
+    padding-top: 10px;
+  }
 }

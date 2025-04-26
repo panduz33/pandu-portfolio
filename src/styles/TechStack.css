@@ -16,12 +16,27 @@
   background-color: #08313a;
 }
 
+/* Mobile adjustments for tech stack content */
+@media screen and (max-width: 768px) {
+  .tech-stack-content {
+    padding: 1rem;
+  }
+}
+
 .content-container {
   display: flex;
   width: 100%;
   height: 95%;
   flex: 1;
   background-color: #08313a;
+}
+
+/* Mobile adjustments for content container */
+@media screen and (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 /* Left container image slider styles */
@@ -32,6 +47,16 @@
   border-right: 1px solid #00a0b3;
   position: relative;
   overflow: hidden;
+}
+
+/* Mobile adjustments for left container */
+@media screen and (max-width: 768px) {
+  .left-container {
+    width: 100%;
+    height: 40vh;
+    border-right: none;
+    border-bottom: 1px solid #00a0b3;
+  }
 }
 
 /* Image slider styles */
@@ -60,6 +85,13 @@
   box-sizing: border-box;
 }
 
+/* Mobile adjustments for slider image */
+@media screen and (max-width: 768px) {
+  .slider-image {
+    padding: 10px;
+  }
+}
+
 .slider-indicators {
   position: absolute;
   bottom: 20px;
@@ -73,6 +105,15 @@
   border-radius: 20px;
 }
 
+/* Mobile adjustments for slider indicators */
+@media screen and (max-width: 768px) {
+  .slider-indicators {
+    bottom: 10px;
+    padding: 5px 8px;
+    gap: 6px;
+  }
+}
+
 .indicator {
   width: 12px;
   height: 12px;
@@ -81,6 +122,14 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   border: 2px solid transparent;
+}
+
+/* Mobile adjustments for indicators */
+@media screen and (max-width: 768px) {
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .indicator:hover {
@@ -104,6 +153,15 @@
   padding-left: 10px;
 }
 
+/* Mobile adjustments for right section */
+@media screen and (max-width: 768px) {
+  .right-section {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 10px;
+  }
+}
+
 .middle-container {
   height: 75%;
   background-color: rgba(8, 49, 58, 0.9);
@@ -113,6 +171,15 @@
   margin-bottom: 10px;
 }
 
+/* Mobile adjustments for middle container */
+@media screen and (max-width: 768px) {
+  .middle-container {
+    height: auto;
+    min-height: 200px;
+    max-height: 40vh;
+  }
+}
+
 .right-container {
   height: calc(25% - 10px);
   background-color: rgba(8, 49, 58, 0.9);
@@ -120,6 +187,14 @@
   backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
+}
+
+/* Mobile adjustments for right container */
+@media screen and (max-width: 768px) {
+  .right-container {
+    height: auto;
+    min-height: 150px;
+  }
 }
 
 /* Image description styles */
@@ -137,6 +212,14 @@
   background-color: transparent;
 }
 
+/* Mobile adjustments for image description */
+@media screen and (max-width: 768px) {
+  .image-description {
+    padding: 10px;
+    justify-content: flex-start;
+  }
+}
+
 .image-title {
   font-size: 28px;
   margin: 0 0 10px 0;
@@ -144,11 +227,27 @@
   color: #00ffff;
 }
 
+/* Mobile adjustments for image title */
+@media screen and (max-width: 768px) {
+  .image-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+}
+
 .image-summary {
   font-size: 16px;
   margin: 0 0 15px 0;
   color: #1dcfe4;
   line-height: 1.6;
+}
+
+/* Mobile adjustments for image summary */
+@media screen and (max-width: 768px) {
+  .image-summary {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
 }
 
 .image-pros {
@@ -166,10 +265,25 @@
   text-align: left;
 }
 
+/* Mobile adjustments for image pros list */
+@media screen and (max-width: 768px) {
+  .image-pros ul {
+    padding-left: 15px;
+  }
+}
+
 .image-pros li {
   margin-bottom: 8px;
   font-size: 16px;
   color: #1dcfe4;
+}
+
+/* Mobile adjustments for image pros list items */
+@media screen and (max-width: 768px) {
+  .image-pros li {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
 }
 
 .image-paragraph {
@@ -177,6 +291,14 @@
   line-height: 1.5;
   margin: 15px 0 0 0;
   color: #1dcfe4;
+}
+
+/* Mobile adjustments for image paragraph */
+@media screen and (max-width: 768px) {
+  .image-paragraph {
+    font-size: 14px;
+    margin-top: 10px;
+  }
 }
 
 /* GitHub projects styles */
@@ -195,10 +317,25 @@
   text-align: left;
 }
 
+/* Mobile adjustments for github section title */
+@media screen and (max-width: 768px) {
+  .github-section-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+}
+
 .github-links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+/* Mobile adjustments for github links */
+@media screen and (max-width: 768px) {
+  .github-links {
+    gap: 6px;
+  }
 }
 
 .github-link {
@@ -214,6 +351,14 @@
   border-left: 3px solid #00ff00;
 }
 
+/* Mobile adjustments for github link */
+@media screen and (max-width: 768px) {
+  .github-link {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
 .github-link:hover {
   background-color: rgba(0, 160, 179, 0.4);
   transform: translateY(-2px);
@@ -224,4 +369,13 @@
   width: 16px;
   height: 16px;
   margin-right: 8px;
+}
+
+/* Mobile adjustments for github icon */
+@media screen and (max-width: 768px) {
+  .github-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+  }
 }
