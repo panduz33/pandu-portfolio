@@ -1,0 +1,116 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  border: none;
+  box-sizing: border-box;
+  background-color: #08313a;
+  color: #1dcfe4;
+}
+
+.home-content {
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #1dcfe4;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-header h1 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #1dcfe4;
+}
+
+.home-section {
+  margin-bottom: 2rem;
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+  border-left: 4px solid #00a0b3;
+}
+
+.home-section h2 {
+  color: #00ffff;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #00a0b3;
+  padding-bottom: 1.5rem;
+}
+
+.home-section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #1dcfe4;
+}
+
+.home-navigation {
+  margin-bottom: 2rem;
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 0.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #00a0b3;
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+}
+
+.home-navigation h2 {
+  color: #00ffff;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #00a0b3;
+  padding-bottom: 1.5rem;
+}
+
+.nav-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.nav-option {
+  flex: 1;
+  min-width: 250px;
+  background-color: rgba(8, 49, 58, 0.9);
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid #00a0b3;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-option h3 {
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.nav-option p {
+  color: #1dcfe4;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.nav-button {
+  background-color: #00a0b3;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  align-self: center;
+}
+
+.nav-button:hover {
+  background-color: #1dcfe4;
+}

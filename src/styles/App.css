@@ -1,0 +1,63 @@
+/* Global styles */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #08313a;
+  color: #1dcfe4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #08313a;
+  color: #1dcfe4;
+}
+
+/* Common container styles */
+.content-container {
+  display: flex;
+  width: 100%;
+  height: 95%;
+  flex: 1;
+  background-color: #08313a;
+}
+
+/* Button styles */
+button {
+  background-color: rgba(0, 160, 179, 0.4);
+  color: #00ffff;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 160, 179, 0.6);
+}
+
+/* Link styles */
+a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #00ff00;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF;
+}
+
+/* Section backgrounds */
+.section {
+  background-color: #0D3368; /* Deep Sapphire */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}

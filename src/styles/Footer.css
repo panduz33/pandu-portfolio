@@ -1,0 +1,24 @@
+.footer-container {
+  width: 100%;
+  background-color: #08313a;
+  padding: 10px 0;
+  border-top: 1px solid #00a0b3;
+  text-align: center;
+}
+
+.footer-text {
+  color: #1dcfe4;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-link {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #00ff00;
+  text-decoration: underline;
+}

@@ -1,0 +1,111 @@
+.experiences-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  border: none;
+  box-sizing: border-box;
+  background-color: #08313a;
+  color: #1dcfe4;
+}
+
+.experiences-content {
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #1dcfe4;
+}
+
+.experiences-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.experiences-header h1 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #00a0b3;
+  top: 0;
+  bottom: 0;
+  left: 120px;
+  margin-left: -2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 160px;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #1dcfe4;
+  border: 4px solid #00ff00;
+  border-radius: 50%;
+  left: 110px;
+  top: 0;
+  margin-left: -10px;
+  z-index: 1;
+}
+
+.timeline-date {
+  position: absolute;
+  width: 100px;
+  text-align: right;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+  color: #00ffff;
+}
+
+.timeline-content {
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+  border-left: 4px solid #00a0b3;
+}
+
+.timeline-content h3 {
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+  color: #1dcfe4;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.timeline-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #1dcfe4;
+}
+
+.responsibilities {
+  padding-left: 1.5rem;
+}
+
+.responsibilities li {
+  margin-bottom: 0.5rem;
+  color: #1dcfe4;
+}
+
+/* Reuse menu styles from TechStack.css */

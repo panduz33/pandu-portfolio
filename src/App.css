@@ -1,0 +1,505 @@
+/* Update these styles to make the container full screen with dark theme */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Update the menu container for dark theme */
+.menu-container {
+  background-color: #1e1e1e;
+  box-shadow: 0 1px 3px rgba(255,255,255,0.1);
+}
+
+/* Update the left container background */
+.left-container {
+  background-color: #1e1e1e;
+}
+
+/* Update the middle and right containers for dark theme */
+.middle-container, .right-container {
+  background-color: rgba(30, 30, 30, 0.9);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+}
+
+/* Menu styles */
+.menu-container {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #444;
+  box-sizing: border-box;
+  min-height: 40px;
+  overflow: visible;
+  position: relative;
+  z-index: 9000;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #555;
+  padding-left: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumb-separator {
+  color: #999;
+  margin: 0 5px;
+}
+
+.breadcrumb-item {
+  color: #555;
+}
+
+.breadcrumb-item.active {
+  color: #4a90e2;
+  font-weight: 500;
+}
+
+.greeting {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px;
+}
+
+.menu-button {
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 70px;
+  white-space: nowrap;
+}
+
+.menu-button:hover {
+  background-color: #333;
+}
+
+/* Adjust the large container to be flex column */
+/* Remove the border from the large container */
+.large-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  border: none; /* Changed from 2px solid #333 to none */
+  box-sizing: border-box;
+}
+
+/* Remove the border between left and right containers */
+.left-container {
+  width: 50%;
+  background-color: #f0f0f0;
+  padding: 0;
+  border-right: none; /* Changed from 1px solid #333 to none */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove the border between middle and right containers */
+.middle-container {
+  height: 75%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-bottom: none;
+  backdrop-filter: blur(8px);
+  margin-bottom: 10px; /* Add spacing between middle and right containers */
+}
+
+/* Update the right container to match */
+.right-container {
+  height: calc(25% - 10px); /* Adjust height to account for the margin */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+/* Remove the border at the bottom of the menu container */
+.menu-container {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-color: #121212;
+  border-bottom: none; /* Changed from 1px solid #ddd to none */
+  box-sizing: border-box;
+  min-height: 40px;
+  overflow: hidden;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Make breadcrumb more visible and clickable */
+.breadcrumb {
+  font-size: 15px;
+  color: #333;
+  padding-left: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumb-item {
+  color: #555;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+.breadcrumb-item:hover {
+  color: #4a90e2;
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+.breadcrumb-item.active {
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+/* Make greeting more visible */
+.greeting {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px;
+  background-color: rgba(74, 144, 226, 0.1);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.menu-button {
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 70px;
+  white-space: nowrap;
+}
+
+.menu-button:hover {
+  background-color: #333;
+}
+
+/* Adjust the large container to be flex column */
+.large-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  border: 2px solid #333;
+  box-sizing: border-box;
+}
+
+/* Content container to hold the original layout */
+.content-container {
+  display: flex;
+  width: 100%;
+  height: 95%;
+  flex: 1;
+  background-color: #121212;
+}
+
+/* Adjust existing containers to work within the new structure */
+/* Left container image slider styles */
+.left-container {
+  width: 50%;
+  background-color: #1e1e1e;
+  padding: 0;
+  border-right: 1px solid #444;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slider-images {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Changed from 90% to 100% */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Improve image display in slider */
+.slider-image {
+  min-width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed from cover to contain */
+  display: block;
+  background-color: #1e1e1e; /* Dark background for transparent logos */
+  padding: 20px; /* Add padding around logos */
+  box-sizing: border-box;
+}
+
+/* Adjust the left container for better image display */
+.left-container {
+  width: 50%;
+  background-color: white; /* Changed to white for better logo visibility */
+  padding: 0;
+  border-right: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10; /* Ensure indicators appear above images */
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.indicator.active {
+  background-color: white;
+  border: 2px solid #4a90e2; /* Blue border for active indicator */
+  transform: scale(1.2); /* Slightly larger when active */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Glow effect */
+}
+
+/* Making containers transparent */
+.right-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.middle-container {
+  height: 75%;
+  background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent dark */
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent white border */
+  backdrop-filter: blur(5px);
+}
+
+.right-container {
+  height: 25%;
+  background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent dark */
+  padding: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+/* Image description styles */
+.image-description {
+  width: 100%;
+  height: 100%;
+  color: #e0e0e0;
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: transparent; /* Make background transparent */
+}
+
+.image-title {
+  font-size: 28px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.image-summary {
+  color: #bbbbbb;
+}
+
+.image-location {
+  font-size: 16px;
+  margin: 0 0 15px 0;
+  font-style: italic;
+  color: #bbbbbb;
+}
+
+.image-attractions {
+  margin: 10px 0;
+}
+
+.image-attractions ul {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.image-attractions li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.image-paragraph {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 15px 0 0 0;
+}
+
+/* Fix the borders between containers */
+.large-container {
+  border: none;
+}
+
+.left-container {
+  border-right: none;
+  background-color: transparent;
+}
+
+.middle-container {
+  border-bottom: none;
+}
+
+.menu-container {
+  border-bottom: none;
+}
+
+.content-container {
+  gap: 0;
+}
+
+/* Add a small gap between sections instead of borders */
+.right-section {
+  padding-left: 10px;
+}
+
+/* Update the right container styling for GitHub projects */
+.right-container {
+  height: calc(25% - 10px);
+  background-color: rgba(30, 30, 30, 0.9);
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add styles for the GitHub projects section */
+.github-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* Update GitHub link styling to match the dark theme */
+.github-link {
+  display: flex;
+  align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border-left: 3px solid #4a90e2;
+}
+
+.github-link:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Menu dropdown styles */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  width: 180px;
+  z-index: 10000;
+  margin-top: 5px;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease;
+}
+
+.menu-item {
+  display: block;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  text-align: left;
+  border-left: 3px solid transparent;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #333333;
+  color: #4a90e2;
+  border-left: 3px solid #4a90e2;
+}
