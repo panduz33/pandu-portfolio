@@ -115,6 +115,49 @@ function TechStack({ onNavigate, visitorName }) {
     setCurrentSlide(index)
   }
 
+  // Handle arrow navigation
+  const handlePrevSlide = () => {
+    setCurrentSlide(prev => (prev === 0 ? imageData.length - 1 : prev - 1))
+  }
+
+  const handleNextSlide = () => {
+    setCurrentSlide(prev => (prev + 1) % imageData.length)
+  }
+
+  // Check if we need to show arrows (more than 3 slides)
+  const showArrows = imageData.length > 3
+  
+  // Logic to display only a subset of indicators
+  const maxVisibleIndicators = 4; // Show only 4 indicators at a time
+  
+  // Calculate which indicators to show
+  const getVisibleIndicators = () => {
+    if (imageData.length <= maxVisibleIndicators) {
+      // If we have fewer slides than max indicators, show all
+      return imageData.map((_, index) => index);
+    }
+    
+    // Calculate the range of indicators to show
+    let start = currentSlide - Math.floor(maxVisibleIndicators / 2);
+    let end = start + maxVisibleIndicators - 1;
+    
+    // Adjust if we're near the beginning
+    if (start < 0) {
+      start = 0;
+      end = maxVisibleIndicators - 1;
+    }
+    
+    // Adjust if we're near the end
+    if (end >= imageData.length) {
+      end = imageData.length - 1;
+      start = Math.max(0, end - maxVisibleIndicators + 1);
+    }
+    
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  };
+  
+  const visibleIndicators = getVisibleIndicators();
+
   return (
     <Menu onNavigate={onNavigate} activePage="tech-stack" visitorName={visitorName}>
     <div className="tech-stack-container">
@@ -132,13 +175,33 @@ function TechStack({ onNavigate, visitorName }) {
               ))}
             </div>
             <div className="slider-indicators">
-              {imageData.map((_, index) => (
+              {showArrows && (
+                <button 
+                  className="slider-arrow" 
+                  onClick={handlePrevSlide}
+                  aria-label="Previous slide"
+                >
+                  &#10094;
+                </button>
+              )}
+              
+              {visibleIndicators.map(index => (
                 <div 
                   key={index} 
                   className={`indicator ${index === currentSlide ? 'active' : ''}`}
                   onClick={() => goToSlide(index)}
                 />
               ))}
+              
+              {showArrows && (
+                <button 
+                  className="slider-arrow" 
+                  onClick={handleNextSlide}
+                  aria-label="Next slide"
+                >
+                  &#10095;
+                </button>
+              )}
             </div>
           </div>
         </div>
