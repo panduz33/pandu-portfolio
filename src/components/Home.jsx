@@ -8,7 +8,7 @@ function Home({ onNavigate, visitorName }) {
       <div className="home-content">
         <div className="home-header">
           <h1>Welcome to Pandu's Portfolio</h1>
-          <p className="subtitle">QA Engineer & Test Automation Specialist</p>
+          <p className="subtitle">QA Engineer - Test Manual & Automation Specialist</p>
         </div>
         
         <div className="home-section">
