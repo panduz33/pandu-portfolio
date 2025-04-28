@@ -5,6 +5,8 @@ import '../styles/TechStack.css'
 function TechStack({ onNavigate, visitorName }) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const sliderRef = useRef(null)
+  const touchStartXRef = useRef(null)
+  const isDraggingRef = useRef(false)
   
   // Tools with descriptions
   const imageData = [
@@ -110,6 +112,144 @@ function TechStack({ onNavigate, visitorName }) {
     }
   }, [currentSlide])
   
+  // Enhanced touch and mouse swipe functionality
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    
+    // Touch events
+    const handleTouchStart = (e) => {
+      // Pause auto-scroll when user interacts
+      clearInterval(window.sliderInterval);
+      touchStartXRef.current = e.touches[0].clientX;
+    };
+    
+    const handleTouchMove = (e) => {
+      if (touchStartXRef.current === null) return;
+      
+      const currentX = e.touches[0].clientX;
+      const diff = currentX - touchStartXRef.current;
+      
+      // Calculate how much to translate during the drag
+      const translateX = -currentSlide * 100 + (diff / slider.offsetWidth) * 100;
+      slider.style.transition = 'none'; // Disable transition during drag
+      slider.style.transform = `translateX(${translateX}%)`;
+    };
+    
+    const handleTouchEnd = (e) => {
+      if (touchStartXRef.current === null) return;
+      
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchEndX - touchStartXRef.current;
+      
+      // Re-enable transition for the slide change
+      slider.style.transition = 'transform 0.5s ease-in-out';
+      
+      // If the swipe distance is significant enough (more than 15% of container width)
+      const threshold = slider.offsetWidth * 0.15;
+      
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0 && currentSlide > 0) {
+          // Swipe right - go to previous slide
+          setCurrentSlide(prev => prev - 1);
+        } else if (diff < 0 && currentSlide < imageData.length - 1) {
+          // Swipe left - go to next slide
+          setCurrentSlide(prev => prev + 1);
+        } else {
+          // Reset to current slide if at the end
+          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+      } else {
+        // Reset to current slide if swipe wasn't significant
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+      
+      touchStartXRef.current = null;
+    };
+    
+    // Mouse events for desktop
+    const handleMouseDown = (e) => {
+      // Pause auto-scroll when user interacts
+      clearInterval(window.sliderInterval);
+      e.preventDefault();
+      touchStartXRef.current = e.clientX;
+      isDraggingRef.current = true;
+      slider.style.transition = 'none';
+      slider.style.cursor = 'grabbing';
+    };
+    
+    const handleMouseMove = (e) => {
+      if (!isDraggingRef.current) return;
+      
+      const currentX = e.clientX;
+      const diff = currentX - touchStartXRef.current;
+      
+      // Calculate how much to translate during the drag
+      const translateX = -currentSlide * 100 + (diff / slider.offsetWidth) * 100;
+      slider.style.transform = `translateX(${translateX}%)`;
+    };
+    
+    const handleMouseUp = (e) => {
+      if (!isDraggingRef.current) return;
+      
+      slider.style.cursor = 'grab';
+      slider.style.transition = 'transform 0.5s ease-in-out';
+      
+      const diff = e.clientX - touchStartXRef.current;
+      const threshold = slider.offsetWidth * 0.15;
+      
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0 && currentSlide > 0) {
+          setCurrentSlide(prev => prev - 1);
+        } else if (diff < 0 && currentSlide < imageData.length - 1) {
+          setCurrentSlide(prev => prev + 1);
+        } else {
+          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+      } else {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+      
+      isDraggingRef.current = false;
+      touchStartXRef.current = null;
+    };
+    
+    const handleMouseLeave = () => {
+      if (isDraggingRef.current) {
+        slider.style.transition = 'transform 0.5s ease-in-out';
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        slider.style.cursor = 'grab';
+        isDraggingRef.current = false;
+        touchStartXRef.current = null;
+      }
+    };
+    
+    // Add event listeners
+    slider.addEventListener('touchstart', handleTouchStart, { passive: true });
+    slider.addEventListener('touchmove', handleTouchMove, { passive: true });
+    slider.addEventListener('touchend', handleTouchEnd);
+    
+    slider.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+    slider.addEventListener('mouseleave', handleMouseLeave);
+    
+    // Set initial cursor style
+    slider.style.cursor = 'grab';
+    
+    return () => {
+      // Remove event listeners
+      slider.removeEventListener('touchstart', handleTouchStart);
+      slider.removeEventListener('touchmove', handleTouchMove);
+      slider.removeEventListener('touchend', handleTouchEnd);
+      
+      slider.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      slider.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [currentSlide, imageData.length]);
+  
   // Handle indicator click
   const goToSlide = (index) => {
     setCurrentSlide(index)
@@ -164,7 +304,10 @@ function TechStack({ onNavigate, visitorName }) {
       <div className="content-container">
         <div className="left-container">
           <div className="image-slider">
-            <div className="slider-images" ref={sliderRef}>
+            <div 
+              className="slider-images" 
+              ref={sliderRef}
+            >
               {imageData.map((item, index) => (
                 <img 
                   key={index} 
