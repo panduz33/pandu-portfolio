@@ -2,6 +2,21 @@ import Menu from './Menu'
 import '../styles/About.css'
 
 function About({ onNavigate, visitorName }) {
+  const technicalSkills = [
+    "Manual Testing", "Automation Testing", "API Testing", "Web Testing", "Mobile Testing (Android)", "Test Case Design", "Test Planning", 
+    "SQL", "HTML", "CSS", "REST API", "GraphQL", "Javascript", "Java", "Golang"
+  ];
+
+  const tools = [
+    "WebdriverIO", "CodeceptJS", "Node-RED", "Appium", "Appium Inspector", "HTTP-Toolkit", "Mocha JS", "Chai JS", 
+    "Allure", "Postman", "Selenium", "Selenium IDE", "Katalon", "Git", "Hammertime", "Hammerflux", "Tesla-Go", "T-Rex", "Endurium"
+  ]
+
+  const softSkills = [
+    "Analytical Thinking", "Attention to Detail", "Problem Solving", "Communication", "Collaboration", 
+    "Mentorship", "Adaptability", "Time Management"
+  ]
+
   return (
       <Menu onNavigate={onNavigate} activePage="about" visitorName={visitorName}>
       <div className="about-content">
@@ -12,8 +27,9 @@ function About({ onNavigate, visitorName }) {
         
         <div className="about-section">
           <h2>Who I Am</h2>
-          <p>I'm a passionate Software Test Engineer with expertise in automated testing and quality assurance. With a strong background in test automation frameworks and methodologies, I help teams deliver high-quality software products that meet user expectations.</p>
-          
+          <p>I'm a passionate Software Test Engineer with expertise in both manual and automated testing and quality assurance. 
+          I have strong attention to detail and a passion for exploration, with experience in Web UI testing, API testing, and manual and automated testing for Android applications.</p>
+          <p>I collaborate closely with developers to investigate and identify the root causes of bugs in both Web UI and Android apps, and support Product Managers in conducting User Acceptance Testing (UAT) and feature or application demonstrations.</p>
           <p>My approach combines technical expertise with a user-centered mindset, ensuring that applications not only function correctly but also provide an excellent user experience.</p>
         </div>
         
@@ -21,35 +37,28 @@ function About({ onNavigate, visitorName }) {
           <h2>My Skills</h2>
           <div className="skills-container">
             <div className="skill-category">
-              <h3>Testing</h3>
+              <h3>Technical Skills</h3>
               <ul>
-                <li>API Testing</li>
-                <li>End-to-End Testing</li>
-                <li>Performance Testing</li>
-                <li>Mobile Testing</li>
-                <li>Test Automation</li>
-              </ul>
-            </div>
-            
-            <div className="skill-category">
-              <h3>Languages</h3>
-              <ul>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>SQL</li>
+                {technicalSkills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
               </ul>
             </div>
             
             <div className="skill-category">
               <h3>Tools</h3>
               <ul>
-                <li>Postman</li>
-                <li>CodeceptJS</li>
-                <li>WebdriverIO</li>
-                <li>Mocha/Chai</li>
-                <li>Katalon</li>
+                {tools.map((tool, index) => 
+                <li key={index}>{tool}</li>)}
+              </ul>
+            </div>
+            
+            <div className="skill-category">
+              <h3>Soft Skills</h3>
+              <ul>
+                {softSkills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
               </ul>
             </div>
           </div>

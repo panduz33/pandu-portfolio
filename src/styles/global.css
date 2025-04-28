@@ -1,0 +1,19 @@
+/* Global styles to fix layout issues */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Fix for React Router Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}

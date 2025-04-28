@@ -9,7 +9,7 @@ function TechStack({ onNavigate, visitorName }) {
   // Tools with descriptions
   const imageData = [
     {
-      url: '/images/postman-newman-cli.png',
+      url: '/images/postman-newman-htmlextra.jpg',
       title: 'Postman',
       summary: 'API Testing & Development',
       pros: ['User-friendly interface', 'Extensive testing capabilities', 'Great for collaboration', 'Automated testing support'],
@@ -21,7 +21,7 @@ function TechStack({ onNavigate, visitorName }) {
       ]
     },
     {
-      url: 'https://miro.medium.com/v2/resize:fit:597/1*A-89RxRz9KsR9_JEhWU7WQ.jpeg',
+      url: '/images/codecept-mocha.jpg',
       title: 'CodeceptJS',
       summary: 'End-to-End Testing Framework',
       pros: ['Easy-to-read syntax', 'Multiple drivers support', 'Parallel testing', 'BDD-style assertions'],
@@ -33,7 +33,7 @@ function TechStack({ onNavigate, visitorName }) {
       ]
     },
     {
-      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEsYNDxozxEV5ZEvuhKM5RS511QBf9owy8LA&s',
+      url: '/images/node-red.jpg',
       title: 'Node-RED',
       summary: 'Flow-based Programming Tool',
       pros: ['Visual programming interface', 'Large library of nodes', 'Easy integration with IoT devices', 'Low-code development'],
@@ -45,7 +45,7 @@ function TechStack({ onNavigate, visitorName }) {
       ]
     },
     {
-      url: '/images/android-http-toolkit.png',
+      url: '/images/android-http-toolkit.jpg',
       title: 'Android Device Emulator + HTTP Toolkit',
       summary: 'Mobile Testing & Network Debugging',
       pros: ['Real device simulation', 'Network traffic inspection', 'API debugging', 'Performance monitoring'],
@@ -57,7 +57,7 @@ function TechStack({ onNavigate, visitorName }) {
       ]
     },
     {
-      url: 'https://mochajs.org/static/favicon.copy.f17f048f84.png',
+      url: '/images/mocha-axios-chai.jpg',
       title: 'Mocha JS + Chai JS + Axios',
       summary: 'JavaScript Testing & HTTP Client Stack',
       pros: ['Flexible test structure', 'Expressive assertion library', 'Promise-based HTTP requests', 'Great for API testing'],
@@ -69,7 +69,7 @@ function TechStack({ onNavigate, visitorName }) {
       ]
     },
     {
-      url: 'https://webdriver.io/img/logo-webdriver-io.png',
+      url: '/images/webdriver-io.jpg',
       title: 'WebdriverIO',
       summary: 'Next-gen Browser & Mobile Automation',
       pros: ['Modern JavaScript support', 'Cross-browser testing', 'Mobile testing capabilities', 'Extensive plugin ecosystem'],
@@ -81,7 +81,7 @@ function TechStack({ onNavigate, visitorName }) {
       ]
     },
     {
-      url: 'https://d1h3p5fzmizjvp.cloudfront.net/themes/katalon_4/images/header/katalon_logo.svg',
+      url: '/images/katalon.jpg',
       title: 'Katalon',
       summary: 'Unified Quality Management Platform',
       pros: ['Codeless automation', 'Cross-platform testing', 'CI/CD integration', 'Comprehensive reporting'],
